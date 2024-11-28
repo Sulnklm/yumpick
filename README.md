@@ -1,1 +1,3 @@
 # yumpick
+
+test github connectivity
