@@ -2,13 +2,14 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
-import { faHome, faBook, faUser } from '@fortawesome/free-solid-svg-icons'; 
+import { faHome, faCompass,faBook, faUser } from '@fortawesome/free-solid-svg-icons'; 
 import { ActivityIndicator } from 'react-native';
 
 import { useFonts } from 'expo-font'; // Import font loading hook
 
 // Import screens for navigation
 import HomeScreen from "./screens/HomeScreen";
+import BrowseScreen from "./screens/BrowseScreen";
 import ReservationsScreen from "./screens/ReservationsScreen";
 import ProfileScreen from "./screens/ProfileScreen";
 
@@ -46,6 +47,15 @@ export default function App() {
           options={{
             tabBarIcon: ({color, size}) => (
               <FontAwesomeIcon icon={faHome} color={color} size={size} /> // Home tab icon
+            )
+          }}
+        />
+        <Tab.Screen 
+          name='Browse'
+          component={BrowseScreen}
+          options={{
+            tabBarIcon: ({color, size}) => (
+              <FontAwesomeIcon icon={faCompass} color={color} size={size} /> // Home tab icon
             )
           }}
         />
