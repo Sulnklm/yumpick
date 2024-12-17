@@ -11,7 +11,7 @@ export default function HomeScreen() {
     <View style={styles.container}>
       <SearchBox />
       <CategoryBox />
-      <Map />
+      {/* <Map /> */}
       <Trendy />
     </View>
   );
