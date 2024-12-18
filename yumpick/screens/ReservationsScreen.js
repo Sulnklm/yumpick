@@ -1,7 +1,7 @@
 import React from "react";
 import { ScrollView, StyleSheet, Text, View } from "react-native";
 import ReservationCard from "../components/reservations/ReservationCard"; // Import the ReservationCard component
-import { Typography } from "../components/styles/typography";
+// import { Typography } from "../components/styles/typography";
 
 export default function ReservationPage() {
   const reservationData = [
@@ -46,11 +46,11 @@ export default function ReservationPage() {
   return (
     <ScrollView style={styles.container}>
       <View style={styles.options}>
-        <Text style={Typography.h1}>Upcoming</Text>
+        {/* <Text style={Typography.h1}>Upcoming</Text> */}
         <Text style={styles.line}>|</Text>
-        <Text style={[Typography.h1, { color: '#AAAAAA' }]}>Completed</Text> 
+        {/* <Text style={[Typography.h1, { color: '#AAAAAA' }]}>Completed</Text>  */}
       <Text style={styles.line}>|</Text>
-      <Text style={[Typography.h1, { color: '#AAAAAA' }]}>Cancelled</Text> 
+      {/* <Text style={[Typography.h1, { color: '#AAAAAA' }]}>Cancelled</Text>  */}
     </View>
 
       {/* Rendering Reservation Cards */}
@@ -73,7 +73,7 @@ export default function ReservationPage() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#f5f5f5",
+    // backgroundColor: "#f5f5f5",
     paddingTop: 20,
   },
   line: {

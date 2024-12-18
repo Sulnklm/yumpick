@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image, FlatList } from 'react-native';
-import { Typography } from '../styles/typography';
+import { Typography } from '../styles/Typography';
 
 // image data
 const imageData = [

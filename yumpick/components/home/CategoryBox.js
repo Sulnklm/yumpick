@@ -1,65 +1,41 @@
-import React from 'react';
-import { FlatList, Text, View, StyleSheet, Dimensions } from 'react-native';
-import { Typography } from '../styles/typography'; 
+import React from "react";
+import { FlatList, View, Image, Dimensions } from "react-native";
+import tw from "twrnc";
+import { Text } from '../styles/Text'; // Import the custom Text component
+import { Colors } from "../styles/Colors";
+// JSON 데이터 불러오기
+const categoriesData = require("../../assets/data/home.json");
 
-const categoriesData = [
-  { id: 1, name: "Pizza" },
-  { id: 2, name: "Korean" },
-  { id: 3, name: "Chinese" },
-  { id: 4, name: "Japanese" },
-  { id: 5, name: "American" },
-  { id: 6, name: "Italian" },
-  { id: 7, name: "Bakery" },
-  { id: 8, name: "Coffee" }
-];
+// Image mapping based on the file names in your assets
+const imageMapping = {
+  "christmas.png": require("../../assets/home/categories/christmas.png"),
+  "newyear.png": require("../../assets/home/categories/newyear.png"),
+  "omakase.png": require("../../assets/home/categories/omakase.png"),
+  "finedining.png": require("../../assets/home/categories/finedining.png"),
+  "Michelin.png": require("../../assets/home/categories/Michelin.png"),
+  "CelebritySpots.png": require("../../assets/home/categories/CelebritySpots.png"),
+  "outdoorseating.png": require("../../assets/home/categories/outdoorseating.png"),
+  "ViralDessert.png": require("../../assets/home/categories/ViralDessert.png"),
+};
 
 // Get the device's screen width
-const windowWidth = Dimensions.get('window').width;
+const windowWidth = Dimensions.get("window").width;
 
-// Styles for the CategoryBox component
-const styles = StyleSheet.create({
-  container: {
-    padding: 10,
-    marginVertical: 20,
-    height: 200,
-  },
-  categoryItem: {
-    width: (windowWidth - 70) / 4, // Calculate 4 items per row with margins
-    height: 80,
-    alignItems: 'center',
-    justifyContent: 'center',
-    margin: 5,
-    backgroundColor: '#fff',
-    padding: 10,
-    borderRadius: 5,
-    borderColor: '#ddd',
-    borderWidth: 1,
-  },
-  categoryText: {
-    fontSize: Typography.p.fontSize,  
-    color: '#333',
-    textAlign: 'center',
-    flexShrink: 1,
-  },
-  columnWrapper: {
-    justifyContent: 'space-between', 
-  },
-});
-
-export default function SearchBox() {
+export default function CategoryBox() {
   return (
-    <View style={styles.container}>
-      {/* FlatList with numColumns set to 4 for grid layout */}
+    <View style={tw`h-50 mt-5`}>
       <FlatList
-        data={categoriesData}
-        keyExtractor={(item) => item.id.toString()} 
+        data={categoriesData.categories} // Make sure you're using the correct section from the JSON
+        keyExtractor={(item) => item.id.toString()}
         renderItem={({ item }) => (
-          <View style={styles.categoryItem}>
-            <Text style={styles.categoryText}>{item.name}</Text> 
+          <View style={tw`w-[${(windowWidth - 80) / 4}px] h-20 items-center justify-center m-2 bg-white`}>
+            <Image source={imageMapping[item.image]} style={tw`w-10 h-10 mb-2 object-contain`} />
+            <Text style={tw`text-center`} type="caption">{item.name}</Text>
           </View>
         )}
-        numColumns={4}  // Display 4 items per row
-        columnWrapperStyle={styles.columnWrapper}  // Style for spacing between columns
+        numColumns={4}
+        columnWrapperStyle={tw`justify-between`}
+        scrollEnabled={true}
       />
     </View>
   );

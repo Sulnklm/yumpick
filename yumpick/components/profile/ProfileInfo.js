@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text, StyleSheet, Image } from "react-native";
-import { Typography } from "../styles/typography";
+import { Typography } from "../styles/Typography";
 
 export default function ProfileInfo() {
   return (
