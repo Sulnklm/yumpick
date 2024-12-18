@@ -1,5 +1,5 @@
 import React from "react";
-import { ScrollView, StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 import ReservationCard from "../components/reservations/ReservationCard"; // Import the ReservationCard component
 // import { Typography } from "../components/styles/typography";
 
@@ -44,14 +44,12 @@ export default function ReservationPage() {
   ];
 
   return (
-    <ScrollView style={styles.container}>
       <View style={styles.options}>
         {/* <Text style={Typography.h1}>Upcoming</Text> */}
         <Text style={styles.line}>|</Text>
         {/* <Text style={[Typography.h1, { color: '#AAAAAA' }]}>Completed</Text>  */}
       <Text style={styles.line}>|</Text>
       {/* <Text style={[Typography.h1, { color: '#AAAAAA' }]}>Cancelled</Text>  */}
-    </View>
 
       {/* Rendering Reservation Cards */}
       {/* Loop through each reservation and pass data to ReservationCard */}
@@ -66,7 +64,8 @@ export default function ReservationPage() {
           image={item.image} // Pass the image prop here
         />
       ))}
-    </ScrollView>
+          </View>
+
   );
 }
 

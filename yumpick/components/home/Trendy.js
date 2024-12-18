@@ -11,9 +11,8 @@ const trendyData = [
 
 export default function Trendy() {
   return (
-    <View style={tw`flex-1 mt-5 pl-4`}>
+    <View style={tw`pl-4`}>
       <Text style={tw`text-2xl font-bold mb-2`}>Trendy</Text>
-      
       {/* For data list */}
       <FlatList
         data={trendyData}

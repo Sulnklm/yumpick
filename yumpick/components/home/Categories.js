@@ -2,9 +2,8 @@ import React from "react";
 import { FlatList, View, Image, Dimensions } from "react-native";
 import tw from "twrnc";
 import { Text } from '../styles/Text'; // Import the custom Text component
-import { Colors } from "../styles/Colors";
 // JSON 데이터 불러오기
-const categoriesData = require("../../assets/data/home.json");
+const categories = require("../../assets/data/home.json");
 
 // Image mapping based on the file names in your assets
 const imageMapping = {
@@ -21,11 +20,11 @@ const imageMapping = {
 // Get the device's screen width
 const windowWidth = Dimensions.get("window").width;
 
-export default function CategoryBox() {
+export default function Categories() {
   return (
-    <View style={tw`h-50 mt-5`}>
+    <View style={tw`h-50`}>
       <FlatList
-        data={categoriesData.categories} // Make sure you're using the correct section from the JSON
+        data={categories.categories} // Make sure you're using the correct section from the JSON
         keyExtractor={(item) => item.id.toString()}
         renderItem={({ item }) => (
           <View style={tw`w-[${(windowWidth - 80) / 4}px] h-20 items-center justify-center m-2 bg-white`}>

@@ -1,5 +1,4 @@
 // src/styles/typography.js
-
 import tw from 'twrnc';
 
 export const Typography = {

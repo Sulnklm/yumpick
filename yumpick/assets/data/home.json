@@ -40,5 +40,32 @@
         "name": "Viral Dessert",
         "image": "ViralDessert.png"
       }
+    ],
+
+    "banner": [
+        {
+            "id": 1,
+            "image": "banner1.jpg",
+            "line1": "Banner 1",
+            "line2": "christmas.png",
+            "line3": "For the First 100 Guests!",
+            "shopName": "Lumiere"
+          },
+          {
+            "id": 2,
+            "image": "banner2.jpg",
+            "line1": "Banner 2",
+            "line2": "christmas.png",
+            "line3": "For the First 100 Guests!",
+            "shopName": "Lumiere"
+          },
+          {
+            "id": 3,
+            "image": "banner3.jpg",
+            "line1": "Banner 3",
+            "line2": "christmas.png",
+            "line3": "For the First 100 Guests!",
+            "shopName": "Lumiere"
+          }
     ]
 }
