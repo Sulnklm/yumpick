@@ -1,5 +1,6 @@
 import React from 'react';
-import { View, Text, FlatList, StyleSheet, Image, Dimensions } from 'react-native';
+import { View, Text, FlatList, Image } from 'react-native';
+import tw from 'twrnc'
 
 const trendyData = [
   { id: '1', name: 'The Gourmet Grill', image: require('../../assets/home/restaurants/restaurant1.jpeg') },
@@ -10,8 +11,8 @@ const trendyData = [
 
 export default function Trendy() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Trendy</Text>
+    <View style={tw`flex-1 mt-5 pl-4`}>
+      <Text style={tw`text-2xl font-bold mb-2`}>Trendy</Text>
       
       {/* For data list */}
       <FlatList
@@ -19,9 +20,10 @@ export default function Trendy() {
         horizontal
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => (
-          <View style={styles.itemContainer}>
-            <Image source={item.image} style={styles.image} />
-            <Text style={styles.itemText}>{item.name}</Text>
+          <View style={tw`mr-4 items-center`}>
+            <Image source={item.image} style={tw`w-38 h-38 rounded-lg`} />
+            {/* <Text style={styles.itemText}>{item.name}</Text> */}
+            <Text style={tw`bg-black text-white mt-2`}>{item.name}</Text>
           </View>
         )}
         showsHorizontalScrollIndicator={false}
@@ -29,30 +31,3 @@ export default function Trendy() {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    marginTop: 20,
-    paddingLeft: 15,
-  },
-  title: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    marginBottom: 10,
-  },
-  itemContainer: {
-    marginRight: 15,
-    alignItems: 'center',
-  },
-  image: {
-    width: 150,   
-    height: 150, 
-    borderRadius: 10,
-  },
-  itemText: {
-    marginTop: 5,
-    fontSize: 16,
-    textAlign: 'center',
-  },
-});

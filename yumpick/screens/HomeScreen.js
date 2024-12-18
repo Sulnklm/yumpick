@@ -10,10 +10,14 @@ export default function HomeScreen() {
     <View style={{ backgroundColor: Colors.background, flex: 1 }}>
       <SearchBox />
       <CategoryBox />
+<<<<<<< HEAD
 <<<<<<< Updated upstream
       <Map />
 =======
 >>>>>>> Stashed changes
+=======
+      {/* <Map /> */}
+>>>>>>> 6fee2f9cb8c1f9a2abf7a1a1057c0c5a978913f6
       <Trendy />
     </View>
   );
