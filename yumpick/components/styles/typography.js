@@ -1,19 +1,12 @@
-export const Typography = {
+// src/styles/typography.js
 
-  h1: {
-    fontFamily: "Sans-semiBold",
-    fontSize: 18,
-  },
-  h2: {
-    fontFamily: "Sans-semiBold",
-    fontSize: 16,
-  },
-  h3: {
-    fontFamily: "Sans-semiBold",
-    fontSize: 14,
-  },
-  p: {
-    fontFamily: "Sans-regular",
-    fontSize: 13,
-  },
+import tw from 'twrnc';
+
+export const Typography = {
+  h1: tw`text-[28px] font-semiBold`,   // font-regular는 이미 정의된 폰트 패밀리로 사용
+  h2: tw`text-[20px] font-medium`,
+  h3: tw`text-[18px] font-semiBold`,
+  p: tw`text-[16px] font-regular`,
+  caption: tw`text-[14px] font-regular`,
+
 };

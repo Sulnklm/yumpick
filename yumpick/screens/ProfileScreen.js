@@ -6,8 +6,8 @@ import ProfileTabs from '../components/profile/ProfileTabs';  // Import the Prof
 export default function Profile() {
   return (
     <ScrollView style={styles.container}>
-      <ProfileInfo />  
-      <ProfileTabs />  
+      {/* <ProfileInfo />  
+      <ProfileTabs />   */}
     </ScrollView>
   );
 }
@@ -15,6 +15,6 @@ export default function Profile() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#f5f5f5',
+    // backgroundColor: '#f5f5f5',
   },
 });

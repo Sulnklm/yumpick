@@ -1,0 +1,44 @@
+{
+    "categories": [
+      {
+        "id": 1,
+        "name": "Christmas",
+        "image": "christmas.png"
+      },
+      {
+        "id": 2,
+        "name": "New Year",
+        "image": "newyear.png"
+      },
+      {
+        "id": 3,
+        "name": "Omakase",
+        "image": "omakase.png"
+      },
+      {
+        "id": 4,
+        "name": "Fine Dining",
+        "image": "finedining.png"
+      },
+      {
+        "id": 5,
+        "name": "Michelin",
+        "image": "Michelin.png"
+      },
+      {
+        "id": 6,
+        "name": "Celebrity Spots",
+        "image": "CelebritySpots.png"
+      },
+      {
+        "id": 7,
+        "name": "Outdoor Seating",
+        "image": "outdoorseating.png"
+      },
+      {
+        "id": 8,
+        "name": "Viral Dessert",
+        "image": "ViralDessert.png"
+      }
+    ]
+}
