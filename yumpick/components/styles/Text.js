@@ -1,35 +1,30 @@
-import React from 'react';
-import { Text as RNText, ActivityIndicator } from 'react-native';
-import { useFonts } from 'expo-font';
-import tw from 'twrnc';
-import { Colors } from './Colors';
-import { Typography } from './Typography'; // Import Typography styles
+import React from "react";
+import { Text as RNText, ActivityIndicator } from "react-native";
+import { useFonts } from "expo-font";
+import { Typography } from "./Typography"; // Import Typography styles
 
-export const Text = ({ style, type = 'p', weight, color = Colors.grayDark, ...props }) => {
+export const Text = ({
+  style,
+  type = "p",  // Default to "p" if no type is provided
+  ...props
+}) => {
   const [fontsLoaded] = useFonts({
-    'Afacad-Regular': require('../../assets/fonts/Afacad-Regular.ttf'),
-    'Afacad-SemiBold': require('../../assets/fonts/Afacad-SemiBold.ttf'),
-    'Afacad-Medium': require('../../assets/fonts/Afacad-Medium.ttf'),
+    "Afacad-Regular": require("../../assets/fonts/Afacad-Regular.ttf"),
+    "Afacad-SemiBold": require("../../assets/fonts/Afacad-SemiBold.ttf"),
+    "Afacad-Medium": require("../../assets/fonts/Afacad-Medium.ttf"),
+    "Afacad-Bold": require("../../assets/fonts/Afacad-Bold.ttf"),
   });
 
   if (!fontsLoaded) {
     return <ActivityIndicator size="large" />;
   }
 
-  // Determine the font family based on the weight
-  const fontFamily =
-    weight === 'semibold'
-      ? 'Afacad-SemiBold'
-      : weight === 'medium'
-      ? 'Afacad-Medium'
-      : 'Afacad-Regular';
-
-  // Map the type to Typography styles
+  // Get the correct typography style for the type (e.g., h1, h2, p, etc.)
   const typographyStyle = Typography[type] || Typography.p;
 
   return (
     <RNText
-      style={[tw.style(typographyStyle), { fontFamily, color }, style]}
+      style={[typographyStyle, style]} // Combine typographyStyle with any additional styles
       {...props}
     />
   );
