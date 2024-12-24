@@ -1,17 +1,19 @@
-import React from 'react';
-import { View } from 'react-native';
-import { SearchBox } from '../components/global/SearchBox';
-import Banner from '../components/home/Banner';
+import React from "react";
+import { View } from "react-native";
+import { SearchBox } from "../components/global/SearchBox";
+import Banner from "../components/home/Banner";
 import Categories from "../components/home/Categories";
-import Trendy from '../components/home/Trendy';
-import { Colors } from '../components/styles/Colors';
+import Trendy from "../components/home/Trendy";
+import { Colors } from "../components/styles/Colors";
+import Cities from "../components/home/Cities";
 
 export default function HomeScreen() {
   return (
     <View style={{ backgroundColor: Colors.background }}>
       <SearchBox />
-      <Banner/>
+      <Banner />
       <Categories />
+      <Cities />
       <Trendy />
     </View>
   );
