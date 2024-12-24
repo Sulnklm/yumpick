@@ -1,13 +1,19 @@
-import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
-import { faHome, faCompass, faBook, faUser } from '@fortawesome/free-solid-svg-icons'; 
+import React from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
+import {
+  faHome,
+  faCompass,
+  faBook,
+  faUser,
+} from "@fortawesome/free-solid-svg-icons";
 // Import screens for navigation
-import HomeScreen from "./screens/HomeScreen";
+// import HomeScreen from "./screens/HomeScreen";
 import BrowseScreen from "./screens/BrowseScreen";
 import ReservationsScreen from "./screens/ReservationsScreen";
 import ProfileScreen from "./screens/ProfileScreen";
+import HomeStack from "./components/navigation/HomeStack";
 
 // Create a bottom tab navigator
 const Tab = createBottomTabNavigator();
@@ -17,50 +23,53 @@ export default function App() {
     <NavigationContainer>
       <Tab.Navigator
         screenOptions={{
-          tabBarActiveTintColor: '#393939', // Active tab color
-          tabBarInactiveTintColor: '#757575', // Inactive tab color
+          tabBarActiveTintColor: "#393939", // Active tab color
+          tabBarInactiveTintColor: "#757575", // Inactive tab color
         }}
       >
-        <Tab.Screen 
+        <Tab.Screen
           name="Home"
-          component={HomeScreen}
+          component={HomeStack}
           options={{
-            tabBarIcon: ({color}) => (
+            headerShown: false,
+            tabBarIcon: ({ color }) => (
               <FontAwesomeIcon icon={faHome} color={color} size={23} /> // Home tab icon
-            )
+            ),
           }}
         />
-        <Tab.Screen 
+        <Tab.Screen
           name="Browse"
           component={BrowseScreen}
           options={{
-            tabBarIcon: ({color, size}) => (
+            headerShown: false,
+            tabBarIcon: ({ color }) => (
               <FontAwesomeIcon icon={faCompass} color={color} size={23} /> // Browse tab icon
-            )
+            ),
           }}
         />
-        <Tab.Screen 
-          name="Info"
+        <Tab.Screen
+          name="Reservations"
           component={ReservationsScreen}
           options={{
-            headerTitle: 'Reservations', 
-            tabBarLabel: 'Reservations', 
-            tabBarIcon: ({color, size}) => (
+            headerShown: false,
+            tabBarLabel: "Reservations",
+            tabBarIcon: ({ color }) => (
               <FontAwesomeIcon icon={faBook} color={color} size={23} />
-            )
+            ),
           }}
         />
-        <Tab.Screen 
+        <Tab.Screen
           name="Profile"
           component={ProfileScreen}
           options={{
-            title: 'Profile', 
-            tabBarIcon: ({color, size}) => (
+            headerShown: false,
+            tabBarLabel: "Profile",
+            tabBarIcon: ({ color }) => (
               <FontAwesomeIcon icon={faUser} color={color} size={23} /> // User icon for Profile
-            )
+            ),
           }}
         />
       </Tab.Navigator>
-    </NavigationContainer>    
+    </NavigationContainer>
   );
 }
