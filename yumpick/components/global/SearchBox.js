@@ -17,7 +17,7 @@ export function SearchBox({ value, onChange }) {
   }
 
   return (
-    <View style={[tw`flex-row items-center rounded-full px-3 h-12 mx-2`, { backgroundColor: Colors.grayExtraLight }]}>
+    <View style={[tw`flex-row mt-20 items-center rounded-full px-3 h-12 mx-2`, { backgroundColor: Colors.grayExtraLight }]}>
       <FontAwesomeIcon icon={faSearch} size={18} color={Colors.grayDark} style={tw`mx-2`} />
       <TextInput
         style={[

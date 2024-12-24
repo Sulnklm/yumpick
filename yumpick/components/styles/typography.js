@@ -21,8 +21,8 @@ export const Typography = {
     fontFamily: 'Afacad-Medium',
   },
   p: {
-    fontSize: 16,
-    color: Colors.grayLight,
+    fontSize: 15,
+    color: Colors.grayDark,
     fontWeight: 'regular',
     fontFamily: 'Afacad-Regular',
   },

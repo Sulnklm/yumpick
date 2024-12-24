@@ -5,5 +5,6 @@ export const Colors = {
     grayLight: '#E5E5E5',
     grayExtraLight: '#ECECEC',
     background: '#ffffff', 
+    gold: "#FF9F1C"
   };
   
