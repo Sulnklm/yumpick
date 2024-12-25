@@ -1,0 +1,200 @@
+[
+  {
+    "id": 1,
+    "image": "restaurant1",
+    "title": "Black Anchor Steakhouse",
+    "location": "Vancouver",
+    "category": ["Christmas", "FineDining"],
+    "rating": 4.9,
+    "reviews": 1038,
+    "isOpen": true,
+    "hours": "Closes 10 p.m."
+  },
+  {
+    "id": 2,
+    "image": "restaurant2",
+    "title": "Sushi Paradise",
+    "location": "Burnaby",
+    "category": ["Japanese", "Omakase"],
+    "rating": 4.7,
+    "reviews": 859,
+    "isOpen": false,
+    "hours": "Opens 11 a.m."
+  },
+  {
+    "id": 3,
+    "image": "restaurant3",
+    "title": "Golden Chopsticks",
+    "location": "Richmond",
+    "category": ["Michelin", "CelebritySpots"],
+    "rating": 4.8,
+    "reviews": 1024,
+    "isOpen": true,
+    "hours": "Closes 11 p.m."
+  },
+  {
+    "id": 4,
+    "image": "restaurant4",
+    "title": "Mountain View Cafe",
+    "location": "Surrey",
+    "category": ["OutdoorSeating", "ViralDessert"],
+    "rating": 4.6,
+    "reviews": 752,
+    "isOpen": true,
+    "hours": "Closes 9 p.m."
+  },
+  {
+    "id": 5,
+    "image": "restaurant5",
+    "title": "Heavenly Bites Bakery",
+    "location": "Coquitlam",
+    "category": ["Christmas", "ViralDessert"],
+    "rating": 4.9,
+    "reviews": 1123,
+    "isOpen": false,
+    "hours": "Opens 7 a.m."
+  },
+  {
+    "id": 6,
+    "image": "restaurant6",
+    "title": "The Chef's Table",
+    "location": "Vancouver",
+    "category": ["FineDining", "Omakase"],
+    "rating": 5.0,
+    "reviews": 876,
+    "isOpen": true,
+    "hours": "Closes 12 a.m."
+  },
+  {
+    "id": 7,
+    "image": "restaurant7",
+    "title": "Rooftop Retreat",
+    "location": "Burnaby",
+    "category": ["OutdoorSeating", "CelebritySpots"],
+    "rating": 4.5,
+    "reviews": 603,
+    "isOpen": false,
+    "hours": "Opens 5 p.m."
+  },
+  {
+    "id": 8,
+    "image": "restaurant8",
+    "title": "Taste of Tokyo",
+    "location": "Richmond",
+    "category": ["Japanese", "Michelin"],
+    "rating": 4.8,
+    "reviews": 987,
+    "isOpen": true,
+    "hours": "Closes 10:30 p.m."
+  },
+  {
+    "id": 9,
+    "image": "restaurant9",
+    "title": "Skyline Diner",
+    "location": "Vancouver",
+    "category": ["CelebritySpots", "ViralDessert"],
+    "rating": 4.3,
+    "reviews": 452,
+    "isOpen": true,
+    "hours": "Closes 8 p.m."
+  },
+  {
+    "id": 10,
+    "image": "restaurant10",
+    "title": "Fusion Delight",
+    "location": "Burnaby",
+    "category": ["FineDining", "Japanese"],
+    "rating": 4.7,
+    "reviews": 623,
+    "isOpen": false,
+    "hours": "Opens 12 p.m."
+  },
+  {
+    "id": 11,
+    "image": "restaurant11",
+    "title": "The Garden Grill",
+    "location": "Richmond",
+    "category": ["OutdoorSeating", "FineDining"],
+    "rating": 4.5,
+    "reviews": 389,
+    "isOpen": true,
+    "hours": "Closes 9:30 p.m."
+  },
+  {
+    "id": 12,
+    "image": "restaurant12",
+    "title": "Chef's Heaven",
+    "location": "Surrey",
+    "category": ["Omakase", "Michelin"],
+    "rating": 4.9,
+    "reviews": 542,
+    "isOpen": true,
+    "hours": "Closes 10 p.m."
+  },
+  {
+    "id": 13,
+    "image": "restaurant13",
+    "title": "Seaside Bites",
+    "location": "Coquitlam",
+    "category": ["Christmas", "OutdoorSeating"],
+    "rating": 4.6,
+    "reviews": 215,
+    "isOpen": false,
+    "hours": "Opens 6 a.m."
+  },
+  {
+    "id": 14,
+    "image": "restaurant14",
+    "title": "Urban Eats",
+    "location": "Vancouver",
+    "category": ["CelebritySpots", "FineDining"],
+    "rating": 4.8,
+    "reviews": 781,
+    "isOpen": true,
+    "hours": "Closes 11 p.m."
+  },
+  {
+    "id": 15,
+    "image": "restaurant15",
+    "title": "The Sweet Escape",
+    "location": "Burnaby",
+    "category": ["ViralDessert", "Christmas"],
+    "rating": 4.4,
+    "reviews": 298,
+    "isOpen": true,
+    "hours": "Closes 10:30 p.m."
+  },
+  {
+    "id": 16,
+    "image": "restaurant16",
+    "title": "Taste of Heaven",
+    "location": "Richmond",
+    "category": ["Omakase", "Japanese"],
+    "rating": 4.9,
+    "reviews": 432,
+    "isOpen": false,
+    "hours": "Opens 1 p.m."
+  },
+  {
+    "id": 17,
+    "image": "restaurant17",
+    "title": "Summit View Eatery",
+    "location": "Surrey",
+    "category": ["OutdoorSeating", "CelebritySpots"],
+    "rating": 4.2,
+    "reviews": 158,
+    "isOpen": true,
+    "hours": "Closes 7:30 p.m."
+  },
+  {
+    "id": 18,
+    "image": "restaurant18",
+    "title": "Cozy Corner Cafe",
+    "location": "Coquitlam",
+    "category": ["FineDining", "Christmas"],
+    "rating": 4.7,
+    "reviews": 376,
+    "isOpen": true,
+    "hours": "Closes 9 p.m."
+  }
+]
