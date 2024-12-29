@@ -1,6 +1,7 @@
 import React from "react";
-import { ScrollView, View, TouchableOpacity, Text, Image } from "react-native";
+import { ScrollView, View, TouchableOpacity, Image } from "react-native";
 import tw from "twrnc";
+import { Text } from '../styles/Text';
 
 const CircleButton = ({ onPress, label, imageSource }) => (
   <TouchableOpacity onPress={onPress} style={tw`items-center mx-2.5`}>
@@ -15,7 +16,7 @@ const CircleButton = ({ onPress, label, imageSource }) => (
       <View
         style={tw`absolute inset-0 justify-center items-center bg-black bg-opacity-50`}
       >
-        <Text style={tw`text-xs text-white text-center px-1.25`}>{label}</Text>
+        <Text style={tw`text-white text-center px-1.25`} type="caption">{label}</Text>
       </View>
     </View>
   </TouchableOpacity>
@@ -60,12 +61,12 @@ const Cities = () => {
   ];
 
   return (
-    <View style={tw`px-2.5`}>
+    <View style={tw`px-5`}>
       {/* Divider */}
       <View style={tw`border-b border-gray-300 mb-4`} />
 
       {/* Section Title */}
-      <Text style={tw`text-lg font-bold text-gray-800 mb-2 ml-2`}>
+      <Text style={tw`mb-2 ml-2`} type="h1">
         Where do you go?
       </Text>
 

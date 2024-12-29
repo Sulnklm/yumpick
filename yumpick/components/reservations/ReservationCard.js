@@ -1,6 +1,9 @@
 import React from "react";
-import { View, Text, Image, TouchableOpacity } from "react-native";
-import { FontAwesome } from "@expo/vector-icons"; // For the share icon
+import { View, Image, TouchableOpacity } from "react-native";
+import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
+import { faArrowUpFromBracket } from "@fortawesome/free-solid-svg-icons";
+import { Text } from "../styles/Text";
+import { Colors } from "../styles/Colors";
 import tw from "twrnc"; // Import twrnc for Tailwind styling
 
 const ReservationCard = ({
@@ -12,38 +15,53 @@ const ReservationCard = ({
   image,
 }) => {
   return (
-    <View style={tw`bg-white rounded-lg m-4 shadow-lg`}>
+    <View style={tw`bg-white rounded-lg px-5`}>
       {/* Image with Conditional Tag */}
-      <View style={tw`relative`}>
-        <Image source={image} style={tw`w-full h-36 rounded-t-lg`} />
-        {daysLeft >= 1 && ( // Show only if the reservation is not in the past
-          <View
-            style={tw`absolute top-2 left-2 bg-red-500 rounded-md px-2 py-1`}
-          >
-            <Text style={tw`text-white text-xs font-bold`}>D-{daysLeft}</Text>
-          </View>
-        )}
-      </View>
+      <View style={tw`flex-row`}>
+        <Image
+          source={image}
+          style={tw`w-full w-30 h-30 rounded-t-lg rounded-md mr-3`}
+        />
 
-      {/* Content Area */}
-      <View style={tw`p-4 flex-row items-center justify-between`}>
         {/* Details */}
         <View style={tw`flex-1`}>
-          <Text style={tw`text-lg font-bold mb-1`}>{restaurantName}</Text>
-          <Text style={tw`text-sm text-gray-500 mb-1`}>{dateTime}</Text>
-          <Text style={tw`text-sm text-gray-500 mb-1`}>
-            Guests: {guestNumber}
+          <View style={tw`flex-row justify-between items-center`}>
+            {daysLeft >= 1 && ( // Show only if the reservation is not in the past
+              <View
+                style={[
+                  tw`rounded-md px-2= py-0.3 mb-0.5`,
+                  { backgroundColor: Colors.primaryRed },
+                ]}
+              >
+                <Text style={tw`text-white text-center`}>D-{daysLeft}</Text>
+              </View>
+            )}
+            {/* Share Icon */}
+            {daysLeft && (
+              <FontAwesomeIcon
+                icon={faArrowUpFromBracket}
+                size={15}
+                color={Colors.grayDark}
+                style={[tw`justify-self-end pr-10`]}
+              />
+            )}
+          </View>
+          <Text style={tw`mb-1`} type="h2">
+            {restaurantName}
           </Text>
-          <Text style={tw`text-sm text-gray-500`}>
+          <Text style={tw`mb-0.5`}>{dateTime}</Text>
+          <Text style={tw`mb-0.5`}>Guests: {guestNumber}</Text>
+          <Text style={tw`mb-1 text-sm text-gray-500`}>
             {request ? `Request: ${request}` : "Request: N/A"}
           </Text>
+          {
+            (daysLeft == 0 && ( // Show only if the reservation is not in the past
+              <Text style={tw`underline`}>Add a Review</Text>
+            ))
+          }
         </View>
-
-        {/* Share Icon */}
-        <TouchableOpacity style={tw`ml-4`}>
-          <FontAwesome name="share-alt" size={24} color="#FF6347" />
-        </TouchableOpacity>
       </View>
+      <View style={tw`border-b border-gray-300 my-4`} />
     </View>
   );
 };

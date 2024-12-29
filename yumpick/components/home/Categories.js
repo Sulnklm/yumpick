@@ -1,7 +1,7 @@
 import React from "react";
 import { FlatList, View, Image, Dimensions } from "react-native";
 import tw from "twrnc";
-import { Text } from '../styles/Text'; // Import the custom Text component
+import { Text } from '../styles/Text'; 
 // JSON 데이터 불러오기
 const categories = require("../../assets/data/home.json");
 

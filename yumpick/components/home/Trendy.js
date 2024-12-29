@@ -2,7 +2,11 @@ import React from "react";
 import { View, FlatList, Image, TouchableOpacity } from "react-native";
 import tw from "twrnc";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
-import { faArrowTrendUp, faStar, faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
+import {
+  faArrowTrendUp,
+  faStar,
+  faMapMarkerAlt,
+} from "@fortawesome/free-solid-svg-icons";
 import { Text } from "../styles/Text";
 import { Colors } from "../styles/Colors";
 import RankBadge from "../global/RankBadge";
@@ -45,11 +49,16 @@ const trendyData = [
 
 export default function Trendy({ navigation }) {
   return (
-    <View style={tw`px-5`}>
+    <View style={tw`px-5 my-5`}>
+
       {/* Header */}
       <View style={tw`flex-row justify-between items-center mb-4`}>
         <View style={tw`flex-row items-center gap-3`}>
-          <FontAwesomeIcon icon={faArrowTrendUp} size={23} color={Colors.grayDark} />
+          <FontAwesomeIcon
+            icon={faArrowTrendUp}
+            size={23}
+            color={Colors.grayDark}
+          />
           <Text type="h1">Trendy</Text>
         </View>
         <TouchableOpacity onPress={() => navigation.navigate("TrendySeeAll")}>
@@ -78,9 +87,13 @@ export default function Trendy({ navigation }) {
 
               {/* Location, Category, Rating */}
               <View style={tw`flex-row items-center mb-1`}>
-                <FontAwesomeIcon icon={faMapMarkerAlt} size={12} color={Colors.grayDark} />
+                <FontAwesomeIcon
+                  icon={faMapMarkerAlt}
+                  size={12}
+                  color={Colors.grayDark}
+                />
                 <Text style={tw`mx-1`}>
-                  {item.location} • {item.category} • 
+                  {item.location} • {item.category} •
                 </Text>
                 <FontAwesomeIcon icon={faStar} size={12} color="gold" />
                 <Text style={tw`text-yellow-500`}>
@@ -90,7 +103,11 @@ export default function Trendy({ navigation }) {
 
               {/* Open/Close Status */}
               <View style={tw`flex-row items-center`}>
-                <Text style={tw`${item.isOpen ? "text-[#FF434F]" : "text-[#757575]"}`}>
+                <Text
+                  style={tw`${
+                    item.isOpen ? "text-[#FF434F]" : "text-[#757575]"
+                  }`}
+                >
                   {item.isOpen ? "Open" : "Closed"}
                 </Text>
                 <Text style={tw`ml-1`}>• {item.hours}</Text>
