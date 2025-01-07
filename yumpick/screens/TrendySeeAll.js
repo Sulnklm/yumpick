@@ -3,10 +3,26 @@ import { View, Text, FlatList, Image } from "react-native";
 import tw from "twrnc";
 
 const trendyData = [
-  { id: "1", name: "The Gourmet Grill", image: require("../assets/home/restaurants/restaurant1.jpeg") },
-  { id: "2", name: "Pasta Paradise", image: require("../assets/home/restaurants/restaurant2.jpeg") },
-  { id: "3", name: "Trendy Item 3", image: require("../assets/home/restaurants/restaurant3.jpeg") },
-  { id: "4", name: "Bistro Delight", image: require("../assets/home/restaurants/restaurant4.jpeg") },
+  {
+    id: "1",
+    name: "The Gourmet Grill",
+    image: require("../assets/home/restaurants/restaurant1.jpeg"),
+  },
+  {
+    id: "2",
+    name: "Pasta Paradise",
+    image: require("../assets/home/restaurants/restaurant2.jpeg"),
+  },
+  {
+    id: "3",
+    name: "Trendy Item 3",
+    image: require("../assets/home/restaurants/restaurant3.jpeg"),
+  },
+  {
+    id: "4",
+    name: "Bistro Delight",
+    image: require("../assets/home/restaurants/restaurant4.jpeg"),
+  },
 ];
 
 export default function TrendySeeAll() {

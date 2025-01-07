@@ -1,7 +1,7 @@
 import React from "react";
 import { FlatList, View, Image, Dimensions } from "react-native";
 import tw from "twrnc";
-import { Text } from '../styles/Text'; // Import the custom Text component
+import { Text } from "../styles/Text"; // Import the custom Text component
 // JSON 데이터 불러오기
 const categories = require("../../assets/data/home.json");
 
@@ -20,16 +20,26 @@ const imageMapping = {
 // Get the device's screen width
 const windowWidth = Dimensions.get("window").width;
 
-export default function Categories() {
+export default function Categories(navigation) {
   return (
     <View style={tw`h-50`}>
       <FlatList
         data={categories.categories} // Make sure you're using the correct section from the JSON
         keyExtractor={(item) => item.id.toString()}
         renderItem={({ item }) => (
-          <View style={tw`w-[${(windowWidth - 80) / 4}px] h-20 items-center justify-center m-2 bg-white`}>
-            <Image source={imageMapping[item.image]} style={tw`w-10 h-10 mb-2 object-contain`} />
-            <Text style={tw`text-center`} type="caption">{item.name}</Text>
+          <View
+            style={tw`w-[${
+              (windowWidth - 80) / 4
+            }px] h-20 items-center justify-center m-2 bg-white`}
+            onPress={() => navigation.navigate("TrendySeeAll")}
+          >
+            <Image
+              source={imageMapping[item.image]}
+              style={tw`w-10 h-10 mb-2 object-contain`}
+            />
+            <Text style={tw`text-center`} type="caption">
+              {item.name}
+            </Text>
           </View>
         )}
         numColumns={4}

@@ -17,9 +17,9 @@ export default function HomeScreen({ navigation }) {
       case "Banner":
         return <Banner />;
       case "Categories":
-        return <Categories />;
+        return <Categories navigation={navigation} />;
       case "Cities":
-        return <Cities />;
+        return <Cities navigation={navigation} />;
       case "Trendy":
         return <Trendy navigation={navigation} />;
       default:
