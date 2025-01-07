@@ -1,19 +1,22 @@
 import React, { useState } from "react";
-import { Text, View, ScrollView, TouchableOpacity } from "react-native";
+import { View, ScrollView, TouchableOpacity } from "react-native";
 import ReservationCard from "../components/reservations/ReservationCard";
 import tw from "twrnc";
+import { Text } from "../components/styles/Text";
+import { Typography } from "../components/styles/Typography";
+import { Colors } from "../components/styles/Colors";
 
 export default function ReservationPage() {
   const [activeTab, setActiveTab] = useState("Upcoming");
 
-  const tabs = ["Upcoming", "Completed", "Cancelled"]; // Define tabs
+  const tabs = ["Upcoming", "Completed", "Cancelled"];
 
   const reservationData = [
     {
       id: "1",
       restaurantName: "The Gourmet Grill",
-      dateTime: "2024-12-08 18:00",
-      guestNumber: 4,
+      dateTime: "December 25, 2024 • 6:00 pm",
+      guestNumber: "3 • Dining room",
       request: "Window seat",
       daysLeft: 5,
       image: require("../assets/home/restaurants/restaurant1.jpeg"),
@@ -22,8 +25,8 @@ export default function ReservationPage() {
     {
       id: "2",
       restaurantName: "Pasta Paradise",
-      dateTime: "2024-12-10 19:00",
-      guestNumber: 2,
+      dateTime: "December 18, 2024 • 6:00 pm",
+      guestNumber: "2 • Standard seat",
       request: "Vegetarian menu",
       daysLeft: 0,
       image: require("../assets/home/restaurants/restaurant2.jpeg"),
@@ -32,20 +35,20 @@ export default function ReservationPage() {
     {
       id: "3",
       restaurantName: "Sushi Haven",
-      dateTime: "2024-12-12 20:00",
-      guestNumber: 3,
+      dateTime: "December 12, 2024 • 6:30 pm",
+      guestNumber: "3 • Dining room",
       request: "",
-      daysLeft: -1,
+      daysLeft: 0,
       image: require("../assets/home/restaurants/restaurant3.jpeg"),
       status: "Completed",
     },
     {
       id: "4",
       restaurantName: "Bistro Delight",
-      dateTime: "2024-12-14 18:30",
+      dateTime: "December 27, 2024 • 6:30 pm",
       guestNumber: 5,
       request: "Anniversary celebration",
-      daysLeft: 14,
+      daysLeft: 7,
       image: require("../assets/home/restaurants/restaurant4.jpeg"),
       status: "Upcoming",
     },
@@ -56,28 +59,28 @@ export default function ReservationPage() {
   );
 
   return (
-    <View style={tw`flex-1 bg-gray-100`}>
+    <View style={tw`flex-1 bg-white pt-15`}>
       {/* Header Section */}
       <View
-        style={tw`flex-row justify-around bg-white py-4 border-b border-gray-200`}
+        style={tw`flex-row justify-around bg-white py-2 pb-10`}
       >
         {tabs.map((tab) => (
           <TouchableOpacity
             key={tab}
             onPress={() => setActiveTab(tab)}
-            style={tw`flex-row items-center`}
+            style={tw`flex-row`}
           >
             <Text
-              style={tw.style(
-                `text-base px-2`,
-                activeTab === tab ? "font-bold text-black" : "text-gray-400"
-              )}
+              style={[
+                Typography.h2,
+                tw.style(activeTab === tab ? "text-gray-800" : "text-gray-300"), // Tailwind 조건부 적용
+              ]}
             >
               {tab}
             </Text>
-            {tab !== tabs[tabs.length - 1] && (
-              <Text style={tw`text-gray-300`}>|</Text>
-            )}
+            {/* {tab !== tabs[tabs.length - 1] && (
+              <Text style={tw`text-gray-300 items-center`}>|</Text>
+            )} */}
           </TouchableOpacity>
         ))}
       </View>

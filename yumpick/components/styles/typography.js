@@ -3,7 +3,7 @@ import { Colors } from './Colors'; // Colors를 import
 
 export const Typography = {
   h1: {
-    fontSize: 25,
+    fontSize: 22,
     color: Colors.grayDark,
     fontWeight: 'semi-bold',
     fontFamily: 'Afacad-Bold', // 폰트 패밀리 설정

@@ -49,7 +49,8 @@ const trendyData = [
 
 export default function Trendy({ navigation }) {
   return (
-    <View style={tw`px-5`}>
+    <View style={tw`px-5 my-5`}>
+
       {/* Header */}
       <View style={tw`flex-row justify-between items-center mb-4`}>
         <View style={tw`flex-row items-center gap-3`}>
