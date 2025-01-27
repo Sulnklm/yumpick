@@ -7,12 +7,14 @@ import {
   faCompass,
   faBook,
   faUser,
+  faHeart,
 } from "@fortawesome/free-solid-svg-icons";
 // Import screens for navigation
 // import HomeScreen from "./screens/HomeScreen";
 import BrowseScreen from "./screens/BrowseScreen";
 import ReservationsScreen from "./screens/ReservationsScreen";
 import ProfileScreen from "./screens/ProfileScreen";
+import FavoritesScreen from "./screens/Favorites";
 import HomeStack from "./components/navigation/HomeStack";
 
 // Create a bottom tab navigator
@@ -55,6 +57,17 @@ export default function App() {
             tabBarLabel: "Reservations",
             tabBarIcon: ({ color }) => (
               <FontAwesomeIcon icon={faBook} color={color} size={23} />
+            ),
+          }}
+        />
+        <Tab.Screen
+          name="Favorites"
+          component={FavoritesScreen}
+          options={{
+            headerShown: false,
+            tabBarLabel: "Favorites",
+            tabBarIcon: ({ color }) => (
+              <FontAwesomeIcon icon={faHeart} color={color} size={23} /> // User icon for Profile
             ),
           }}
         />
