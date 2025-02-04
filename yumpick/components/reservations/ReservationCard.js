@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { faArrowUpFromBracket } from "@fortawesome/free-solid-svg-icons";
 import { Text } from "../styles/Text";
 import { Colors } from "../styles/Colors";
-import tw from "twrnc"; // Import twrnc for Tailwind styling
+import tw from "twrnc";
 
 const ReservationCard = ({
   restaurantName,
