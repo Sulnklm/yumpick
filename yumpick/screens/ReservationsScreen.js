@@ -4,7 +4,6 @@ import ReservationCard from "../components/reservations/ReservationCard";
 import tw from "twrnc";
 import { Text } from "../components/styles/Text";
 import { Typography } from "../components/styles/Typography";
-import { Colors } from "../components/styles/Colors";
 
 export default function ReservationPage() {
   const [activeTab, setActiveTab] = useState("Upcoming");
