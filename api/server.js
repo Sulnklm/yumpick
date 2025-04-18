@@ -10,14 +10,18 @@ app.use(cors());
 // Serve static files (images in the 'assets' folder)
 app.use('/assets', express.static(path.join(__dirname, 'assets')));
 
-// Sample restaurant data
+// Sample restaurant data with more realistic details
 const posts = [
   {
     id: 1,
-    title: "Black Steakhouse",
+    title: "Anchor Steakhouse",
     image: "http://10.0.2.2:3900/assets/restaurants/post1.jpg", 
     location: "Vancouver, BC",
     category: "Italian",
+    content: "Perfectly grilled steaks with mouth-watering sides. Must try!",
+    rating: 4.9,
+    reviews: 1038,
+    closingTime: "10 p.m.",
     date: "2 days ago"
   },
   {
@@ -26,6 +30,10 @@ const posts = [
     image: "http://10.0.2.2:3900/assets/restaurants/post2.jpg", 
     location: "Vancouver, BC",
     category: "Japanese",
+    content: "Authentic Gyukatsu with a crispy exterior and juicy interior.",
+    rating: 4.7,
+    reviews: 850,
+    closingTime: "9 p.m.",
     date: "3 days ago"
   },
   {
@@ -34,6 +42,10 @@ const posts = [
     image: "http://10.0.2.2:3900/assets/restaurants/post3.jpg", 
     location: "Vancouver, BC",
     category: "Korean",
+    content: "Delicious Korean BBQ with tender cuts of meat and great sides.",
+    rating: 4.8,
+    reviews: 950,
+    closingTime: "11 p.m.",
     date: "1 day ago"
   },
   {
@@ -42,7 +54,11 @@ const posts = [
     image: "http://10.0.2.2:3900/assets/restaurants/post4.jpg",
     location: "Vancouver, BC",
     category: "Japanese",
-    date: "3 day ago"
+    content: "Fresh sushi with a variety of options from classic rolls to sashimi.",
+    rating: 4.9,
+    reviews: 1200,
+    closingTime: "10 p.m.",
+    date: "3 days ago"
   },
   {
     id: 5,
@@ -50,7 +66,11 @@ const posts = [
     image: "http://10.0.2.2:3900/assets/restaurants/post5.jpg",
     location: "Vancouver, BC",
     category: "Japanese",
-    date: "4 day ago"
+    content: "Ramen lovers, this is the spot for rich broths and perfectly cooked noodles.",
+    rating: 4.6,
+    reviews: 850,
+    closingTime: "9:30 p.m.",
+    date: "4 days ago"
   },
   {
     id: 6,
@@ -58,21 +78,23 @@ const posts = [
     image: "http://10.0.2.2:3900/assets/restaurants/post6.jpg",
     location: "Vancouver, BC",
     category: "Chinese",
-    date: "6 day ago"
+    content: "Experience traditional Chinese hotpot with fresh ingredients and flavorful broths.",
+    rating: 4.7,
+    reviews: 980,
+    closingTime: "10 p.m.",
+    date: "6 days ago"
   },
 ];
 
 // Get all posts
 app.get('/api/posts', (req, res) => {
-  // 게시물 목록 반환 (id, title, image만 포함)
+  // Return basic post info (id, title, image)
   res.json(posts.map(post => ({
     id: post.id,
     image: post.image,
     title: post.title,
     category: post.category,
     location: post.location,
-    rating: post.rating,
-    reviews: post.reviews,
     date: post.date
   })));
 });

@@ -9,16 +9,37 @@ import {
   faUser,
   faHeart,
 } from "@fortawesome/free-solid-svg-icons";
+import { createStackNavigator } from "@react-navigation/stack"; // StackNavigator 추가
 // Import screens for navigation
-// import HomeScreen from "./screens/HomeScreen";
+import HomeScreen from "./screens/HomeScreen";
 import BrowseScreen from "./screens/BrowseScreen";
 import ReservationsScreen from "./screens/ReservationsScreen";
 import ProfileScreen from "./screens/ProfileScreen";
 import FavoritesScreen from "./screens/Favorites";
-import HomeStack from "./components/navigation/HomeStack";
+import PostDetail from "./screens/PostDetail";  // Import PostDetailScreen
 
 // Create a bottom tab navigator
 const Tab = createBottomTabNavigator();
+
+// Create a stack navigator for BrowseScreen and PostDetail
+const BrowseStack = createStackNavigator();
+
+function BrowseStackScreen() {
+  return (
+    <BrowseStack.Navigator>
+      <BrowseStack.Screen
+        name="Browse"
+        component={BrowseScreen}
+        options={{ headerShown: false }}
+      />
+      <BrowseStack.Screen
+        name="PostDetail"
+        component={PostDetail}
+        options={{ headerShown: false }}  // Hide header in PostDetail
+      />
+    </BrowseStack.Navigator>
+  );
+}
 
 export default function App() {
   return (
@@ -31,7 +52,7 @@ export default function App() {
       >
         <Tab.Screen
           name="Home"
-          component={HomeStack}
+          component={HomeScreen}  // Update to BrowseStackScreen for navigation
           options={{
             headerShown: false,
             tabBarIcon: ({ color }) => (
@@ -41,7 +62,7 @@ export default function App() {
         />
         <Tab.Screen
           name="Browse"
-          component={BrowseScreen}
+          component={BrowseStackScreen}  // Set BrowseStackScreen here
           options={{
             headerShown: false,
             tabBarIcon: ({ color }) => (
@@ -67,7 +88,7 @@ export default function App() {
             headerShown: false,
             tabBarLabel: "Favorites",
             tabBarIcon: ({ color }) => (
-              <FontAwesomeIcon icon={faHeart} color={color} size={23} /> // User icon for Profile
+              <FontAwesomeIcon icon={faHeart} color={color} size={23} /> // Favorites icon
             ),
           }}
         />
@@ -78,7 +99,7 @@ export default function App() {
             headerShown: false,
             tabBarLabel: "Profile",
             tabBarIcon: ({ color }) => (
-              <FontAwesomeIcon icon={faUser} color={color} size={23} /> // User icon for Profile
+              <FontAwesomeIcon icon={faUser} color={color} size={23} /> // Profile icon
             ),
           }}
         />
