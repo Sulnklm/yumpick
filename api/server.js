@@ -14,49 +14,85 @@ app.use('/assets', express.static(path.join(__dirname, 'assets')));
 const posts = [
   {
     id: 1,
-    title: "Black Anchor Steakhouse",
-    image: "http://localhost:3900/assets/restaurants/black-anchor-steakhouse.jpg", // 절대 경로로 수정
-    user: "Hyein",
-    content: "Must visit Black Anchor Steakhouse!",
+    title: "Black Steakhouse",
+    image: "http://10.0.2.2:3900/assets/restaurants/post1.jpg", 
     location: "Vancouver, BC",
     category: "Italian",
-    rating: 4.9,
-    reviews: 1038,
-    open: true,
-    closingTime: "10 p.m.",
     date: "2 days ago"
   },
   {
     id: 2,
     title: "Kyoto Gyukatsu",
-    image: "http://localhost:3900/assets/restaurants/kyoto-gyukatsu.jpg", // 절대 경로로 수정
-    user: "John",
-    content: "Best Japanese food I’ve tried!",
+    image: "http://10.0.2.2:3900/assets/restaurants/post2.jpg", 
     location: "Vancouver, BC",
     category: "Japanese",
-    rating: 4.7,
-    reviews: 850,
-    open: true,
-    closingTime: "9 p.m.",
     date: "3 days ago"
-  }
+  },
+  {
+    id: 3,
+    title: "Seoul Gogi",
+    image: "http://10.0.2.2:3900/assets/restaurants/post3.jpg", 
+    location: "Vancouver, BC",
+    category: "Korean",
+    date: "1 day ago"
+  },
+  {
+    id: 4,
+    title: "Sushi Paradise",  
+    image: "http://10.0.2.2:3900/assets/restaurants/post4.jpg",
+    location: "Vancouver, BC",
+    category: "Japanese",
+    date: "3 day ago"
+  },
+  {
+    id: 5,
+    title: "Kokoro",  
+    image: "http://10.0.2.2:3900/assets/restaurants/post5.jpg",
+    location: "Vancouver, BC",
+    category: "Japanese",
+    date: "4 day ago"
+  },
+  {
+    id: 6,
+    title: "Hotpot House",  
+    image: "http://10.0.2.2:3900/assets/restaurants/post6.jpg",
+    location: "Vancouver, BC",
+    category: "Chinese",
+    date: "6 day ago"
+  },
 ];
 
 // Get all posts
 app.get('/api/posts', (req, res) => {
-  res.json(posts.map(post => ({ id: post.id, image: post.image })));
+  // 게시물 목록 반환 (id, title, image만 포함)
+  res.json(posts.map(post => ({
+    id: post.id,
+    image: post.image,
+    title: post.title,
+    category: post.category,
+    location: post.location,
+    rating: post.rating,
+    reviews: post.reviews,
+    date: post.date
+  })));
 });
 
 // Get post details by ID
 app.get('/api/posts/:id', (req, res) => {
   const postId = parseInt(req.params.id);
   const post = posts.find(p => p.id === postId);
+  
   if (post) {
     res.json({
       user: post.user,
       title: post.title,
       image: post.image,
       content: post.content,
+      location: post.location,
+      category: post.category,
+      rating: post.rating,
+      reviews: post.reviews,
+      closingTime: post.closingTime,
       date: post.date
     });
   } else {

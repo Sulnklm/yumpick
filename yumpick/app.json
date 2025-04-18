@@ -4,7 +4,7 @@
     "slug": "week9-lab-example1",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/global/logo.png",
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/global/logo.png",
@@ -15,16 +15,15 @@
       "supportsTablet": true
     },
     "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+      "splash": {
+        "image": "./assets/global/logo.png",
+        "resizeMode": "contain",
+        "backgroundColor": "#FF4350"
       }
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "plugins": [
-      "expo-font"
-    ]
+    "plugins": ["expo-font"]
   }
 }
