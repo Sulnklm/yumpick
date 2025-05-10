@@ -62,7 +62,7 @@ export default function Trendy({ navigation }) {
           <Text type="h1">Trendy</Text>
         </View>
         <TouchableOpacity onPress={() => navigation.navigate("TrendySeeAll")}>
-          <Text>See All ></Text>
+          <Text>See All </Text>
         </TouchableOpacity>
       </View>
 
